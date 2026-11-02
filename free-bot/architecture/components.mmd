@@ -1,0 +1,14 @@
+flowchart TB
+    User["Пользователь / администратор Telegram"] <--> API["Telegram Bot API"]
+    API <--> Bot["aiogram 3: команды и callback"]
+    subgraph Process["Python: один процесс"]
+      Bot <--> FSM["FSM: ввод кода и текстового ответа"]
+      Bot --> Guard["Защита быстрых одинаковых кликов в памяти"]
+      Task["asyncio task: проверка завершений каждые 10 минут"]
+    end
+    Bot <--> DB[("SQLite: users, codes, answers, ui_state")]
+    Assets["Локальные PDF и изображения"] --> Bot
+    Task -->|"Чтение завершений; задержка 3 часа"| DB
+    Task -->|"Попытка отправки"| API
+    API --> Recipient["Администратор / настроенные получатели"]
+    Task -->|"Флаг после попытки: риск потери повтора"| DB

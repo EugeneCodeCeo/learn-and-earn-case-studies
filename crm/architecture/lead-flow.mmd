@@ -1,0 +1,23 @@
+flowchart TD
+    subgraph Warm["Тёплая заявка"]
+      Entry["Entry Bot: Telegram ID и source_code"] --> WarmLead["Новый тёплый лид в CRM"]
+      WarmLead --> Ack["Подтверждение клиенту; ориентир ответа 30 минут"]
+      WarmLead --> Notify["Уведомление руководителю"]
+      Notify --> Assign["Руководитель назначает менеджера"]
+      Assign --> Tasks["Ответственный в Web CRM; уведомление и Мои лиды"]
+    end
+    subgraph Cold["Холодный процесс"]
+      Import["Импорт контактов отдельно от лидов"] --> Batch["Руководитель выделяет пачку менеджеру"]
+      Batch --> Attempt["Менеджер фиксирует попытку связи"]
+      Attempt --> Response{"Содержательный ответ?"}
+      Response -->|"Нет ответа / не удалось написать"| Remain["Остаётся холодным контактом"]
+      Response -->|"Есть заинтересованный ответ"| ColdLead["Создан cold lead, виден в Web CRM"]
+      ColdLead -.-> Link["По модели: связь с холодной записью и менеджером"]
+      ColdLead -.-> Form["После анкеты: передача руководителю; проверка не закрыта"]
+    end
+    Tasks --> Work["Менеджер ведёт продажу и фиксирует статусы"]
+    Link -.-> Work
+    Work --> Store[("Сохранение результатов в PostgreSQL")]
+    WarmLead --> Store
+    Remain --> Store
+    ColdLead --> Store

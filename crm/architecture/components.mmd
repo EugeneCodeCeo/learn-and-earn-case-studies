@@ -1,0 +1,18 @@
+flowchart TB
+    Client["Клиент Telegram"] <--> Entry["Entry Bot: регистрация тёплой заявки"]
+    Employee["Менеджер Telegram"] <--> Manager["Manager Bot: назначенные лиды и холодные контакты"]
+    Browser["CEO / руководитель в браузере"] --> Caddy["Caddy: HTTPS"]
+    Caddy --> Web["React: Web CRM"]
+    Caddy --> Backend["Python: FastAPI"]
+    Web <-->|"API"| Backend
+    Entry <-->|"Заявка и source_code"| Backend
+    Manager <-->|"Контакты, статусы, назначения"| Backend
+    Backend <--> DB[("PostgreSQL: лиды и отдельные холодные записи")]
+    Backend -.->|"Логическая доставка уведомлений; транспорт неизвестен"| Manager
+    subgraph Deploy["Docker Compose"]
+      Web
+      Backend
+      DB
+      Entry
+      Manager
+    end

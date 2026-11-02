@@ -1,0 +1,13 @@
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.log
+__pycache__/
+.venv/
+node_modules/
+.DS_Store
+Thumbs.db
