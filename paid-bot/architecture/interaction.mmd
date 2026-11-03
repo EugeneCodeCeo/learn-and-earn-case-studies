@@ -1,31 +1,14 @@
-sequenceDiagram
-    participant U as Ученик
-    participant B as aiogram бот / FSM
-    participant D as SQLite
-    participant T as Тема ученика
-    participant C as Куратор
-    U->>B: Открыть модуль и получить PDF
-    B->>D: Прочитать доступ и прогресс
-    B-->>U: Материалы и практика
-    loop Файлы одной отправки
-      U->>B: Фото или документ
-      Note over B: Накопление file_id и метаданных в FSM по D2
-      B-->>U: Удалить исходное сообщение, обновить счётчик
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI, Arial, sans-serif","fontSize":"22px","primaryColor":"#ddf4ff","primaryTextColor":"#1f2328","primaryBorderColor":"#54aeff","lineColor":"#57606a","clusterBkg":"#ffffff","clusterBorder":"#d1d9e0","edgeLabelBackground":"#f6f8fa"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40}}}%%
+flowchart TB
+    Student["Ученик · материалы, практика, результаты проверки"] <--> API["Telegram Bot API"]
+    API <--> Curator["Кураторская Telegram-группа · темы учеников, решения и ответы"]
+    API <--> Bot
+    subgraph Application["Приложение"]
+        direction LR
+        Bot["Python / aiogram 3 · команды, callback, обучение, задания, передача сообщений"] <--> FSM["FSM · диалоги; файлы и метаданные до завершения отправки"]
     end
-    U->>B: Завершить отправку
-    B->>D: Зафиксировать работу
-    B->>T: Новая работа и вложения
-    B-->>U: Работа на проверке
-    opt Первичная отправка, есть следующий модуль
-      B->>D: Обновить учебный доступ
-      B-->>U: Следующий модуль открыт
-    end
-    C->>T: Решение и комментарий
-    T->>B: Событие проверки
-    B->>D: pending в accepted или revision
-    B-->>U: Результат и обратная связь
-    Note over B,D: Атомарность не доказана
-    C->>T: /card
-    T->>B: Запрос карточки
-    B->>D: Прочитать состояние ученика
-    B-->>T: Карточка ученика
+    Bot <--> DB[("SQLite · пользователи, прогресс, работы, обращения и связанные записи")]
+    Assets["Локальные PDF · учебные материалы"] --> Bot
+    %% FSM описывает текущую отправку: file_id, file_type, file_name, caption.
+    %% Постоянная сохранность незавершённых файлов при рестарте не заявляется.
+    %% Куратор взаимодействует с приложением через Telegram Bot API, а не напрямую с SQLite.

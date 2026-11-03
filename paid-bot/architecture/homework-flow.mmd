@@ -1,14 +1,28 @@
-flowchart TD
-    Module["Текущий модуль: от 1 до 8"] --> Study["Уроки, PDF и практика"]
-    Study --> Upload["Прикрепить файлы по одному"]
-    Upload --> Submit["Завершить первичную отправку работы"]
-    Submit --> Review["pending: работа на проверке"]
-    Submit --> More{"Номер модуля меньше 8?"}
-    More -->|"Да"| Next["Открыт следующий модуль без ожидания принятия"]
-    Next --> Module
-    More -.->|"Нет, точное условие финала неизвестно"| Done["Финал после модуля 8; архив и кабинет"]
-    Review --> Decision{"Решение куратора"}
-    Decision -->|"accepted"| Accepted["Работа принята"]
-    Decision -->|"revision"| Revision["Комментарий и доработка той же практики"]
-    Revision --> Reupload["Повторно прикрепить файлы и отправить доработку"]
-    Reupload --> Review
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI, Arial, sans-serif","fontSize":"22px","primaryColor":"#ddf4ff","primaryTextColor":"#1f2328","primaryBorderColor":"#54aeff","lineColor":"#57606a","clusterBkg":"#ffffff","clusterBorder":"#d1d9e0","edgeLabelBackground":"#f6f8fa"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40}}}%%
+flowchart TB
+    subgraph initial["01 · От учебного модуля к отправке практики"]
+        direction LR
+        Module["Текущий модуль · 1–8"] --> PDF["PDF-материалы"]
+        PDF --> Practice["Практическое задание"]
+        Practice --> Files["Прикрепить несколько файлов"]
+        Files --> Submit["Завершить первичную отправку"]
+    end
+    Submit --> progress
+    Submit --> review
+    subgraph progress["A · Учебный прогресс"]
+        direction TB
+        More{"Текущий модуль < 8?"} -->|"Да"| Next["Следующий модуль открыт · без ожидания accepted"]
+        More -.->|"Модуль 8"| Final["Точное условие финала не восстановлено"]
+        Next --> Module
+    end
+    subgraph review["B · Кураторская проверка"]
+        direction TB
+        Pending["pending · Работа на проверке"] --> Decision["Решение куратора"]
+        Decision --> Accepted["accepted · Работа принята"]
+        Decision --> Revision["revision · Замечания"]
+        Revision --> Resubmit["Повторно отправить практику"]
+        Resubmit --> Pending
+    end
+    %% Доступ к следующему модулю и статус практики независимы.
+    %% Повторная отправка возвращается только в проверку.
+    %% Условие финала после модуля 8 намеренно не реконструируется.
