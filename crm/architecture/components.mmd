@@ -1,18 +1,15 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI, Arial, sans-serif","fontSize":"22px","primaryColor":"#ddf4ff","primaryTextColor":"#1f2328","primaryBorderColor":"#54aeff","lineColor":"#57606a","clusterBkg":"#ffffff","clusterBorder":"#d1d9e0","edgeLabelBackground":"#f6f8fa"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40}}}%%
 flowchart TB
-    Client["Клиент Telegram"] <--> Entry["Entry Bot: регистрация тёплой заявки"]
-    Employee["Менеджер Telegram"] <--> Manager["Manager Bot: назначенные лиды и холодные контакты"]
-    Browser["CEO / руководитель в браузере"] --> Caddy["Caddy: HTTPS"]
-    Caddy --> Web["React: Web CRM"]
-    Caddy --> Backend["Python: FastAPI"]
-    Web <-->|"API"| Backend
-    Entry <-->|"Заявка и source_code"| Backend
-    Manager <-->|"Контакты, статусы, назначения"| Backend
-    Backend <--> DB[("PostgreSQL: лиды и отдельные холодные записи")]
-    Backend -.->|"Логическая доставка уведомлений; транспорт неизвестен"| Manager
-    subgraph Deploy["Docker Compose"]
-      Web
-      Backend
-      DB
-      Entry
-      Manager
+    Client["Клиент Telegram"] <--> Entry
+    Employee["Менеджер"] <--> Manager
+    Owner["Владелец / руководитель CRM"] --> Caddy["Caddy / HTTPS · веб-доступ"]
+    Caddy --> Web
+    Caddy --> Backend
+    subgraph Deploy["Ubuntu VPS · Docker Compose · 5 компонентов"]
+        Entry["Entry Bot · регистрация заявок"] <--> Backend
+        Manager["Manager Bot · лиды, контакты, уведомления"] <--> Backend
+        Web["React Web CRM · панель руководителя"] <--> Backend
+        Backend["Python / FastAPI · бизнес-логика и API"] <--> DB[("PostgreSQL · лиды, контакты, сотрудники, связанные данные")]
     end
+    %% Логическая архитектура: точные URL, auth и транспорт уведомлений не реконструируются.
+    %% Caddy показан как слой веб-доступа, не как бизнес-сервис или дополнительный контейнер Compose.
