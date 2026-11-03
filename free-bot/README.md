@@ -58,10 +58,17 @@
 
 **Развёртывание:** отдельный исторический запуск на Ubuntu VPS.
 
-Архитектурные схемы:
+### Схема пользовательского маршрута
 
-- [Логика пользовательского маршрута](architecture/user-flow.svg)
-- [Взаимодействие компонентов](architecture/components.svg)
+![Схема пользовательского маршрута Learn and Earn Free](architecture/user-flow.svg)
+
+[Открыть SVG](architecture/user-flow.svg) · [Mermaid-исходник](architecture/user-flow.mmd)
+
+### Схема компонентов
+
+![Схема компонентов Learn and Earn Free](architecture/components.svg)
+
+[Открыть SVG](architecture/components.svg) · [Mermaid-исходник](architecture/components.mmd)
 
 ## Мой вклад
 

@@ -1,14 +1,16 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI, Arial, sans-serif","fontSize":"22px","primaryColor":"#ddf4ff","primaryTextColor":"#1f2328","primaryBorderColor":"#54aeff","lineColor":"#57606a","clusterBkg":"#ffffff","clusterBorder":"#d1d9e0","edgeLabelBackground":"#f6f8fa"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40}}}%%
 flowchart TB
-    User["Пользователь / администратор Telegram"] <--> API["Telegram Bot API"]
-    API <--> Bot["aiogram 3: команды и callback"]
-    subgraph Process["Python: один процесс"]
-      Bot <--> FSM["FSM: ввод кода и текстового ответа"]
-      Bot --> Guard["Защита быстрых одинаковых кликов в памяти"]
-      Task["asyncio task: проверка завершений каждые 10 минут"]
+    User["Пользователь / администратор"] <--> API["Telegram Bot API"]
+    API --> Recipient["Настроенные получатели"]
+    subgraph Process["Python · один процесс"]
+        direction LR
+        Bot["aiogram 3 · команды и callback"] <--> FSM["FSM · ввод кода / текста"]
+        Bot --> Guard["Ограничение повторных кликов · в памяти процесса"]
+        Task["asyncio task · проверка завершений каждые 10 минут"]
     end
-    Bot <--> DB[("SQLite: users, codes, answers, ui_state")]
+    API <--> Bot
+    Bot <--> DB[("SQLite · постоянные данные: users, codes, answers, ui_state; прогресс")]
     Assets["Локальные PDF и изображения"] --> Bot
-    Task -->|"Чтение завершений; задержка 3 часа"| DB
-    Task -->|"Попытка отправки"| API
-    API --> Recipient["Администратор / настроенные получатели"]
-    Task -->|"Флаг после попытки: риск потери повтора"| DB
+    Task -->|"Завершения · задержка 3 ч; флаг после попытки"| DB
+    Task -.->|"Попытка отправки"| API
+    %% Исторический механизм: флаг после попытки; ошибка доставки могла лишать повтора.

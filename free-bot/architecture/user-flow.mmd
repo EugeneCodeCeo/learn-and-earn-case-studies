@@ -1,18 +1,24 @@
-flowchart TD
-    Start["Старт и код доступа"] --> Choice{"Однократный выбор ветки"}
-    Choice --> A["newbie: база с нуля"]
-    Choice --> B["tried: знания есть, системы нет"]
-    A --> M["В выбранной ветке: модуль 1, затем модуль 2"]
-    B --> M
-    M --> PDF["PDF урока: 3 урока в каждом модуле"]
-    PDF --> Answer["Ответ: вариант или свободный текст"]
-    Answer --> Save["Сохранить ответ и прогресс, показать обратную связь"]
-    Save --> More{"Есть следующий урок модуля?"}
-    More -->|"Да"| PDF
-    More -->|"Нет"| Summary["Вывод по модулю"]
-    Summary --> Next{"Есть следующий модуль?"}
-    Next -->|"Да"| M
-    Next -->|"Нет"| Finish["Диагностика завершена"]
-    Finish --> Offer["Полный продукт и переход к менеджеру"]
-    Finish -.-> Notify["Отложенное уведомление получателям"]
-    Save --> Archive["Архив ранее открытых PDF"]
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI, Arial, sans-serif","fontSize":"22px","primaryColor":"#ddf4ff","primaryTextColor":"#1f2328","primaryBorderColor":"#54aeff","lineColor":"#57606a","clusterBkg":"#ffffff","clusterBorder":"#d1d9e0","edgeLabelBackground":"#f6f8fa"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40}}}%%
+flowchart TB
+    subgraph access["01 · Доступ и выбор ветки"]
+        direction LR
+        Start["Старт · код доступа"] --> Choice{"Выбор ветки · один раз"}
+        Choice --> A["newbie · База с нуля"]
+        Choice --> B["tried · Опыт уже есть"]
+    end
+    access --> learn
+    subgraph learn["02 · Обучение · 2 модуля × 3 урока в каждой ветке"]
+        direction LR
+        PDF["PDF урока"] --> Answer["Ответ · вариант или текст"]
+        Answer --> Save["SQLite · ответ и прогресс + обратная связь"]
+        Save -->|"Ещё урок"| PDF
+        Save -->|"3 урока пройдены"| Summary["Вывод по модулю"]
+        Summary -->|"Ещё модуль"| PDF
+        Save -.-> Archive["Архив открытых PDF"]
+    end
+    learn -->|"Оба модуля пройдены"| completion
+    subgraph completion["03 · Завершение диагностики"]
+        direction LR
+        Finish["Диагностика завершена"] --> Offer["Полный курс · переход к менеджеру"]
+        Finish -.-> Notify["Отложенное уведомление настроенным получателям"]
+    end
