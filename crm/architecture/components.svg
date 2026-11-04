@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="970" viewBox="0 0 1000 970" role="img" aria-labelledby="title desc">
-<title id="title">Learn and Earn CRM — архитектура компонентов</title><desc id="desc">Три категории пользователей и три интерфейса работают через FastAPI и PostgreSQL. Рамка Docker Compose содержит пять исторических компонентов. Caddy — слой HTTPS-доступа, отдельный от бизнес-логики.</desc>
+<title id="title">Learn and Earn CRM: архитектура компонентов</title><desc id="desc">Три категории пользователей и три интерфейса работают через FastAPI и PostgreSQL. Рамка Docker Compose содержит пять компонентов. Caddy обеспечивает HTTPS-доступ отдельно от бизнес-логики.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#57606a"/></marker></defs>
 <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#1f2328} .line{fill:none;stroke:#57606a;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round} .stage{fill:#fff;stroke:#d1d9e0;stroke-width:1.5}</style>
 <rect width="1000" height="970" rx="14" fill="#f6f8fa"/>

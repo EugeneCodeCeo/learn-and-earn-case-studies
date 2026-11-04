@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900" role="img" aria-labelledby="title desc">
-<title id="title">Learn and Earn Paid — взаимодействие компонентов</title><desc id="desc">Ученик и кураторская группа обмениваются сообщениями с приложением через Telegram Bot API. Python и aiogram 3 используют FSM для текущего диалога и SQLite для данных, прогресса, работ и обращений.</desc>
+<title id="title">Learn and Earn Paid: взаимодействие компонентов</title><desc id="desc">Ученик и кураторская группа обмениваются сообщениями с приложением через Telegram Bot API. Python и aiogram 3 используют FSM для текущего диалога и SQLite для данных, прогресса, работ и обращений.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#57606a"/></marker></defs>
 <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#1f2328} .line{fill:none;stroke:#57606a;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round} .stage{fill:#fff;stroke:#d1d9e0;stroke-width:1.5}</style>
 <rect width="1000" height="900" rx="14" fill="#f6f8fa"/>
@@ -63,6 +63,6 @@
 </text>
 </g>
 <text x="500" y="849.1" text-anchor="middle" dominant-baseline="middle" font-size="23" font-weight="400">
-<tspan x="500" dy="0.0">Данные и прогресс — SQLite; текущая отправка — FSM.</tspan>
+<tspan x="500" dy="0.0">SQLite хранит данные и прогресс; FSM ведёт текущую отправку.</tspan>
 </text>
 <metadata>Source: interaction.mmd; SHA-256: e4447abbbdda41e37f6bf9ff2f3d027499661c0b7b5cce80b8e3bfce7624b896. SVG layout and Mermaid describe the same nodes and directed connections.</metadata></svg>

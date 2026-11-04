@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="920" viewBox="0 0 1000 920" role="img" aria-labelledby="title desc">
-<title id="title">Learn and Earn Free — компоненты</title><desc id="desc">Python-процесс с aiogram, FSM, ограничением кликов и asyncio task; постоянные данные в SQLite, локальные PDF и изображения. Уведомления описывают исторический механизм попытки отправки.</desc>
+<title id="title">Learn and Earn Free: компоненты</title><desc id="desc">Python-процесс с aiogram, FSM, ограничением кликов и asyncio task; постоянные данные в SQLite, локальные PDF и изображения. Уведомления показаны как попытка отправки без гарантии доставки.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#57606a"/></marker></defs>
 <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#1f2328} .line{fill:none;stroke:#57606a;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round} .stage{fill:#fff;stroke:#d1d9e0;stroke-width:1.5}</style>
 <rect width="1000" height="920" rx="14" fill="#f6f8fa"/>
@@ -84,7 +84,7 @@
 </g>
 <rect x="40" y="810" width="920" height="85" rx="10" fill="#fff8c5" stroke="#bf8700" stroke-width="1.5"/>
 <text x="500" y="840.4" text-anchor="middle" dominant-baseline="middle" font-size="23" font-weight="400">
-<tspan x="500" dy="0.0">Исторический механизм: флаг после попытки отправки.</tspan>
-<tspan x="500" dy="29.4">При ошибке доставки повтор мог потеряться.</tspan>
+<tspan x="500" dy="0.0">Фоновая проверка завершений.</tspan>
+<tspan x="500" dy="29.4">Уведомления без гарантии доставки.</tspan>
 </text>
-<metadata>Source: components.mmd; SHA-256: ea67f0d318802b7551d5fc9ca9783b87a97cce97add410e545d646300d9c7287. SVG layout and Mermaid describe the same nodes and directed connections.</metadata></svg>
+<metadata>Source: components.mmd; SHA-256: f9070e3f686ce9d58938dc86bf163ff8280982eb5fb4c20273bd1e776c357992. SVG layout and Mermaid describe the same nodes and directed connections.</metadata></svg>

@@ -1,4 +1,4 @@
-# Learn and Earn Paid — образовательная Telegram-платформа
+# Образовательная Telegram-платформа Learn and Earn Paid
 
 **Python · aiogram 3 · SQLite · FSM · Telegram Bot API**
 
@@ -45,41 +45,41 @@ Telegram-платформа для последовательного обуче
 
 <table>
 <tr><th>Центр обучения</th><th>Многофайловая отправка</th></tr>
-<tr><td valign="top"><img src="images/paid-learning-center.png" width="420"></td><td valign="top"><img src="images/paid-homework-submission.png" width="420"></td></tr>
+<tr><td valign="top"><img alt="Центр обучения и текущий прогресс" src="images/paid-learning-center.png" width="420"></td><td valign="top"><img alt="Инструкция по отправке нескольких файлов практики" src="images/paid-homework-submission.png" width="420"></td></tr>
 </table>
 
 ### Проверка и обратная связь
 
 <table>
 <tr><th>Работа отправлена на проверку</th><th>Ответ куратора</th></tr>
-<tr><td valign="top"><img src="images/paid-homework-review-confirmation.png" width="420"></td><td valign="top"><img src="images/paid-curator-reply.png" width="420"></td></tr>
+<tr><td valign="top"><img alt="Подтверждение отправки практики и открытие следующего модуля" src="images/paid-homework-review-confirmation.png" width="420"></td><td valign="top"><img alt="Ответ куратора и продолжение обращения" src="images/paid-curator-reply.png" width="420"></td></tr>
 </table>
 
 ### Кураторский интерфейс
 
 <table>
 <tr><th>Отдельная тема ученика</th><th>Карточка ученика</th></tr>
-<tr><td valign="top"><img src="images/paid-curator-student-topic.png" width="420"></td><td valign="top"><img src="images/paid-student-card.png" width="420"></td></tr>
+<tr><td valign="top"><img alt="Отдельная Telegram-тема ученика" src="images/paid-curator-student-topic.png" width="420"></td><td valign="top"><img alt="Карточка ученика с прогрессом и статусами практики" src="images/paid-student-card.png" width="420"></td></tr>
 </table>
 
 ### Управление и завершение
 
 <table>
 <tr><th>Административная панель</th><th>Финальный экран курса</th></tr>
-<tr><td valign="top"><img src="images/paid-admin-dashboard.png" width="420"></td><td valign="top"><img src="images/paid-course-completed.png" width="420"></td></tr>
+<tr><td valign="top"><img alt="Административная панель учебной платформы" src="images/paid-admin-dashboard.png" width="420"></td><td valign="top"><img alt="Финальный экран курса" src="images/paid-course-completed.png" width="420"></td></tr>
 </table>
 
 ## Техническая архитектура
 
-**Backend:** Python и aiogram 3 — обработка Telegram-событий, команд, callback-запросов и учебных сценариев.
+**Backend:** Python и aiogram 3 обрабатывают Telegram-события, команды, callback-запросы и учебные сценарии.
 
-**Хранение данных:** SQLite — информация об учениках, прогрессе, практических работах и обращениях.
+**Хранение данных:** SQLite хранит информацию об учениках, прогрессе, практических работах и обращениях.
 
-**Управление состоянием:** FSM — обработка диалогов и накопление файлов в процессе отправки задания.
+**Управление состоянием:** FSM управляет диалогами и собирает файлы в процессе отправки задания.
 
 **Кураторская интеграция:** Telegram Bot API, отдельные темы учеников, сообщения с контекстом и передача результатов проверки.
 
-**Развёртывание:** исторический запуск приложения на Ubuntu VPS с использованием systemd.
+**Развёртывание:** запуск приложения на Ubuntu VPS с использованием systemd.
 
 ### Обучение и проверка практики
 
@@ -100,15 +100,15 @@ Telegram-платформа для последовательного обуче
 В рамках работы я:
 
 - Проектировал структуру восьмимодульной платформы, учебные маршруты и логику переходов.
-- Разрабатывал требования к системе домашних заданий, статусам проверки и взаимодействию кураторов с учениками.
+- Разрабатывал требования к многофайловой отправке заданий, статусам проверки и взаимодействию кураторов с учениками.
 - Организовывал AI-assisted разработку, проверял изменения в логике приложения и уточнял технические задачи.
 - Тестировал пользовательские, кураторские и административные сценарии, включая отправку нескольких файлов и обработку доработок.
 - Участвовал в настройке серверного окружения и развёртывании платформы.
 
 ## Статус проекта
 
-Платформа исторически разрабатывалась, тестировалась и запускалась на VPS. В настоящее время проект архивный: последняя полная версия исходного кода и серверное окружение недоступны.
+Платформа разрабатывалась, тестировалась и запускалась на VPS. Сейчас проект архивный: последняя полная версия исходного кода и серверное окружение недоступны.
 
 В репозитории представлены описание реализованной функциональности, архитектурные схемы и обезличенные изображения интерфейсов.
 
-[Подробные технические сведения и ограничения](../docs/evidence.md#paid-bot)
+[Материалы проекта](../docs/evidence.md#paid-bot) · [Тестирование и ограничения](../docs/validation.md#paid-bot-образовательная-платформа)

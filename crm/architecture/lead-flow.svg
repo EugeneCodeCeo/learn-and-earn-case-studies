@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1190" viewBox="0 0 1000 1190" role="img" aria-labelledby="title desc">
-<title id="title">Learn and Earn CRM — тёплая заявка и холодный контакт</title><desc id="desc">Две отдельные воронки. Входящая заявка регистрируется Entry Bot, руководитель назначает менеджера вручную. Холодный контакт становится cold lead после содержательного ответа; простая попытка связи не создаёт лид.</desc>
+<title id="title">Learn and Earn CRM: тёплая заявка и холодный контакт</title><desc id="desc">Две отдельные воронки. Входящая заявка регистрируется Entry Bot, руководитель назначает менеджера вручную. Холодный контакт становится cold lead после содержательного ответа; простая попытка связи не создаёт лид.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#57606a"/></marker></defs>
 <style>text{font-family:Segoe UI,Arial,sans-serif;fill:#1f2328} .line{fill:none;stroke:#57606a;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round} .stage{fill:#fff;stroke:#d1d9e0;stroke-width:1.5}</style>
 <rect width="1000" height="1190" rx="14" fill="#f6f8fa"/>
@@ -128,12 +128,11 @@
 <tspan x="750" dy="28.2">не создаёт лид.</tspan>
 </text>
 <text x="750" y="1028.0" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="400">
-<tspan x="750" dy="0.0">Основная механика по документам.</tspan>
-<tspan x="750" dy="25.6">Полный повторный сквозной</tspan>
-<tspan x="750" dy="25.6">прогон не выполнялся.</tspan>
+<tspan x="750" dy="0.0">Контакты и лиды</tspan>
+<tspan x="750" dy="25.6">учитываются раздельно.</tspan>
 </text>
 <text x="250" y="1110.8" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="400">
-<tspan x="250" dy="0.0">Entry Bot регистрирует заявку;</tspan>
-<tspan x="250" dy="25.6">автовыдача Free не заявляется.</tspan>
+<tspan x="250" dy="0.0">Ручное назначение менеджера.</tspan>
+<tspan x="250" dy="25.6">Клиент получает подтверждение.</tspan>
 </text>
-<metadata>Source: lead-flow.mmd; SHA-256: 2dcbf1cc46310db892a327b148b30004f413c5ecdd553911d01217bab8c9a9bd. SVG layout and Mermaid describe the same nodes and directed connections.</metadata></svg>
+<metadata>Source: lead-flow.mmd; SHA-256: a6810178d376f13d4a52078a30eeaa7ac1fd84c694323df1e18ce43418bae85e. SVG layout and Mermaid describe the same nodes and directed connections.</metadata></svg>
