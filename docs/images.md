@@ -1,39 +1,84 @@
-# Иллюстрации
+# Learn and Earn — каталог интерфейсов
 
-Все 27 изображений сохранены из публичного набора исходного ZIP без изменения байтов. Резерв, необезличенные оригиналы и архив предыдущего этапа сюда не включены.
+В этом разделе собраны 27 архивных изображений трёх систем Learn and Earn: Free Bot, Paid Bot и CRM.
 
-| Кейс | Иллюстрация |
+Изображения сохранились после разработки проектов и используются для демонстрации пользовательских сценариев, рабочих интерфейсов и административных инструментов.
+
+Все изображения доступны непосредственно в репозитории. Для удобства они сгруппированы по проектам и снабжены краткими описаниями.
+
+## Обзор
+
+| Проект | Изображения | Описание |
+|---|---:|---|
+| [Free Bot](../free-bot/README.md) | 11 | Диагностика, обучение, прогресс и администрирование |
+| [Paid Bot](../paid-bot/README.md) | 9 | Учебная платформа, домашние задания и кураторская работа |
+| [CRM](../crm/README.md) | 7 | Обработка заявок, веб-панель и Telegram-интерфейсы |
+| **Всего** | **27** | |
+
+## Free Bot — диагностический Telegram-бот
+
+Изображения пользовательского маршрута, учебных экранов и административных инструментов.
+
+| Экран | Что демонстрирует |
 |---|---|
-| free-bot | [free-diagnostic-welcome](../free-bot/images/free-diagnostic-welcome.png) |
-| free-bot | [free-route-selection](../free-bot/images/free-route-selection.png) |
-| free-bot | [free-pdf-lesson-delivery](../free-bot/images/free-pdf-lesson-delivery.png) |
-| free-bot | [free-diagnostic-question](../free-bot/images/free-diagnostic-question.png) |
-| free-bot | [free-answer-confirmation](../free-bot/images/free-answer-confirmation.png) |
-| free-bot | [free-lesson-archive](../free-bot/images/free-lesson-archive.png) |
-| free-bot | [free-manager-handoff](../free-bot/images/free-manager-handoff.png) |
-| free-bot | [free-diagnostic-completed](../free-bot/images/free-diagnostic-completed.png) |
-| free-bot | [free-completion-notification](../free-bot/images/free-completion-notification.png) |
-| free-bot | [free-admin-access-codes](../free-bot/images/free-admin-access-codes.png) |
-| free-bot | [free-admin-users](../free-bot/images/free-admin-users.png) |
-| paid-bot | [paid-learning-center](../paid-bot/images/paid-learning-center.png) |
-| paid-bot | [paid-curator-reply](../paid-bot/images/paid-curator-reply.png) |
-| paid-bot | [paid-course-completed](../paid-bot/images/paid-course-completed.png) |
-| paid-bot | [paid-homework-submission](../paid-bot/images/paid-homework-submission.png) |
-| paid-bot | [paid-homework-review-confirmation](../paid-bot/images/paid-homework-review-confirmation.png) |
-| paid-bot | [paid-admin-dashboard](../paid-bot/images/paid-admin-dashboard.png) |
-| paid-bot | [paid-curator-student-topic](../paid-bot/images/paid-curator-student-topic.png) |
-| paid-bot | [paid-student-card](../paid-bot/images/paid-student-card.png) |
-| paid-bot | [paid-new-homework-notification](../paid-bot/images/paid-new-homework-notification.png) |
-| crm | [crm-entry-client-response](../crm/images/crm-entry-client-response.png) |
-| crm | [crm-entry-admin-events](../crm/images/crm-entry-admin-events.png) |
-| crm | [crm-new-lead-notification](../crm/images/crm-new-lead-notification.png) |
-| crm | [crm-web-dashboard](../crm/images/crm-web-dashboard.png) |
-| crm | [crm-web-team](../crm/images/crm-web-team.png) |
-| crm | [crm-ceo-bot-dashboard](../crm/images/crm-ceo-bot-dashboard.png) |
-| crm | [crm-warm-lead-menu](../crm/images/crm-warm-lead-menu.png) |
+| [Старт диагностики](../free-bot/images/free-diagnostic-welcome.png) | Приветственный экран и начало работы с ботом |
+| [Выбор маршрута](../free-bot/images/free-route-selection.png) | Выбор диагностической ветки обучения |
+| [Материалы урока](../free-bot/images/free-pdf-lesson-delivery.png) | Выдача PDF-материалов |
+| [Диагностический вопрос](../free-bot/images/free-diagnostic-question.png) | Взаимодействие пользователя с учебным вопросом |
+| [Подтверждение ответа](../free-bot/images/free-answer-confirmation.png) | Обратная связь после ответа пользователя |
+| [Архив материалов](../free-bot/images/free-lesson-archive.png) | Доступ к ранее открытым учебным материалам |
+| [Завершение диагностики](../free-bot/images/free-diagnostic-completed.png) | Финальный этап пользовательского маршрута |
+| [Переход к менеджеру](../free-bot/images/free-manager-handoff.png) | Предложение следующего продукта и связи с менеджером |
+| [Уведомление администрации](../free-bot/images/free-completion-notification.png) | Сообщение о завершении диагностики |
+| [Управление кодами доступа](../free-bot/images/free-admin-access-codes.png) | Административные операции с кодами |
+| [Управление пользователями](../free-bot/images/free-admin-users.png) | Административный просмотр пользователей |
 
-## Ограничения кадров
+**Технический кейс:** [Learn and Earn Free](../free-bot/README.md)
 
-Персональные данные и коды скрыты сплошной закраской. В этой версии файлы не редактировались; SHA-256 каждой копии приведён в [манифесте](image-manifest.csv); контроль выполнен против исходного ZIP и публичного набора предыдущего этапа. Встроенные сокращения длинных кнопок, тестовые вложения и исходные ограничения кадрирования отмечены рядом с иллюстрациями в кейсах.
+## Paid Bot — образовательная Telegram-платформа
 
-Совпадение хешей доказывает неизменность копий, но не заменяет разрешение владельца на публикацию. Исходные маски, тестовые вложения, кадрирование и косметическое скрытие `[object Object]` сохранены; исправление приложения по ним не заявляется.
+Изображения восьмимодульной учебной системы, отправки практических заданий, кураторского процесса и администрирования.
+
+| Экран | Что демонстрирует |
+|---|---|
+| [Центр обучения](../paid-bot/images/paid-learning-center.png) | Навигация по обучению и текущий прогресс |
+| [Отправка практики](../paid-bot/images/paid-homework-submission.png) | Прикрепление нескольких файлов к заданию |
+| [Работа на проверке](../paid-bot/images/paid-homework-review-confirmation.png) | Подтверждение отправки и переход к следующему модулю |
+| [Ответ куратора](../paid-bot/images/paid-curator-reply.png) | Обратная связь и продолжение обращения |
+| [Тема ученика](../paid-bot/images/paid-curator-student-topic.png) | Отдельная Telegram-тема для взаимодействия с учеником |
+| [Карточка ученика](../paid-bot/images/paid-student-card.png) | Учебный прогресс и информация о практических работах |
+| [Новое домашнее задание](../paid-bot/images/paid-new-homework-notification.png) | Уведомление кураторской группы о поступившей работе |
+| [Административная панель](../paid-bot/images/paid-admin-dashboard.png) | Управление пользователями, доступами и рабочими разделами |
+| [Завершение курса](../paid-bot/images/paid-course-completed.png) | Финальный экран образовательной платформы |
+
+**Технический кейс:** [Learn and Earn Paid](../paid-bot/README.md)
+
+## CRM — система управления продажами
+
+Изображения веб-панели CRM, регистрации входящих заявок и рабочих Telegram-интерфейсов.
+
+| Экран | Что демонстрирует |
+|---|---|
+| [Подтверждение заявки](../crm/images/crm-entry-client-response.png) | Ответ Entry Bot после регистрации обращения |
+| [События Entry Bot](../crm/images/crm-entry-admin-events.png) | Уведомления о регистрации и повторном обращении |
+| [Новый входящий лид](../crm/images/crm-new-lead-notification.png) | Уведомление о заявке с информацией об источнике |
+| [Рабочая сводка CRM](../crm/images/crm-web-dashboard.png) | Веб-интерфейс с заявками, статистикой и учётом |
+| [Управление командой](../crm/images/crm-web-team.png) | Интерфейс сотрудников и пользовательских ролей |
+| [Панель руководителя в Telegram](../crm/images/crm-ceo-bot-dashboard.png) | Рабочие разделы CRM в Telegram-интерфейсе |
+| [Работа с тёплыми лидами](../crm/images/crm-warm-lead-menu.png) | Категории заявок и организация работы с ними |
+
+**Технический кейс:** [Learn and Earn CRM](../crm/README.md)
+
+## О происхождении изображений
+
+Все 27 PNG — сохранившиеся архивные изображения интерфейсов, подготовленные для публикации в портфолио.
+
+Персональные данные и конфиденциальные сведения на представленных изображениях скрыты. Некоторые кадры содержат тестовые данные, исторические особенности интерфейса или ограничения исходного кадрирования.
+
+Изображения демонстрируют отдельные экраны и состояния приложений. Они не являются доказательством полной работоспособности всех функций или текущей доступности проектов.
+
+Дополнительные сведения о функциональности, архитектуре и исторических проверках приведены в технических кейсах и сопроводительной документации.
+
+---
+
+[Материалы проектов](evidence.md) · [Тестирование и технические ограничения](validation.md) · [Вернуться к портфолио](../README.md)
